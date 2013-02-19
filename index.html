@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+  </head>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <!--
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          -->
+          <a class="brand" href="#">System Info</a>
+          <!--
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>-->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <h3>CPU Information <button id="butRefreshCPU" class="btn btn-mini"><i class="icon-repeat"></i> Refresh</button></h3>
+      <div>
+        
+      </div>
+      <dl class="dl-horizontal">
+        <dt>Architecture</dt>
+        <dd id="cpuArch">Loading...</dd>
+        <dt>Model</dt>
+        <dd id="cpuModel">Loading...</dd>
+        <dt>Number of Processors</dt>
+        <dd id="cpuNumProcs">Loading...</dd>
+      </dl>
+
+      <h4>CPU Usage</h4>
+      <table id="cpuUsage" class="table table-bordered">
+      </table>
+
+      <h3>Memory Information <button id="butRefreshMemory" class="btn btn-mini"><i class="icon-repeat"></i> Refresh</button></h3>
+      <dl class="dl-horizontal">
+        <dt>Total Memory</dt>
+        <dd id="memTotal">Loading...</dd>
+        <dt>Available Memory</dt>
+        <dd id="memAvail">Loading...</dd>
+      </dl>
+      
+      <h3>Storage Capacity <button id="butRefreshStorage" class="btn btn-mini"><i class="icon-repeat"></i> Refresh</button></h3>
+      <table id="storageUsage" class="table table-bordered">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Total Capacity (MB)</th>
+            <th>Available Capacity (MB)</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+
+
+    </div> <!-- /container -->
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
