@@ -8,7 +8,11 @@ $("document").ready(function() {
   updateMemory();
   updateStorage();
 
-  systemInfo.cpu.onUpdated.addListener(onCPUUsageChanged);
+  try {
+    systemInfo.cpu.onUpdated.addListener(onCPUUsageChanged);
+  } catch (ex) {
+    console.log(ex);
+  }
   $("#butRefreshCPU").click(updateCPU);
   $("#butRefreshMemory").click(updateMemory);
   $("#butRefreshStorage").click(updateStorage);
@@ -16,18 +20,32 @@ $("document").ready(function() {
 
 
 function updateCPU() {
-  systemInfo.cpu.get(updateCPUInfo);
+  try {
+    systemInfo.cpu.get(updateCPUInfo);
+  } catch (ex) {
+    console.log(ex);
+  }
 }
 
 function updateMemory() {
-  systemInfo.memory.get(updateMemoryInfo);
+  try {
+    systemInfo.memory.get(updateMemoryInfo);
+  } catch (ex) {
+    $("#panelMemory").addClass("hidden");
+    console.log(ex);
+  }
 }
 
 function updateStorage() {
-  systemInfo.storage.get(updateStorageInfo);
+  try {
+    systemInfo.storage.get(updateStorageInfo);
+  } catch (ex) {
+    console.log(ex);
+  }
 }
 
 function updateCPUInfo(cpu) {
+  console.log(cpu);
   $("#cpuArch").text(cpu.archName);
   $("#cpuModel").text(cpu.modelName);
   $("#cpuNumProcs").text(cpu.numOfProcessors);
@@ -35,11 +53,13 @@ function updateCPUInfo(cpu) {
 }
 
 function updateMemoryInfo(memory) {
+  console.log(memory);
   $("#memTotal").text(Math.round(memory.capacity / (1024*1024)) + " MB");
   $("#memAvail").text(Math.round(memory.availableCapacity / (1024*1024)) + " MB");
 }
 
 function updateStorageInfo(storage) {
+  console.log(storage);
   var tbody = $("#storageUsage tbody");
   tbody.html("");
   for (var i = 0; i < storage.length; i++) {

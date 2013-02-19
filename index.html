@@ -46,17 +46,20 @@
         <dd id="cpuNumProcs">Loading...</dd>
       </dl>
 
+
       <h4>CPU Usage</h4>
       <table id="cpuUsage" class="table table-bordered">
       </table>
 
-      <h3>Memory Information <button id="butRefreshMemory" class="btn btn-mini"><i class="icon-repeat"></i> Refresh</button></h3>
-      <dl class="dl-horizontal">
-        <dt>Total Memory</dt>
-        <dd id="memTotal">Loading...</dd>
-        <dt>Available Memory</dt>
-        <dd id="memAvail">Loading...</dd>
-      </dl>
+      <div id="panelMemory">
+        <h3>Memory Information <button id="butRefreshMemory" class="btn btn-mini"><i class="icon-repeat"></i> Refresh</button></h3>
+        <dl class="dl-horizontal">
+          <dt>Total Memory</dt>
+          <dd id="memTotal">Loading...</dd>
+          <dt>Available Memory</dt>
+          <dd id="memAvail">Loading...</dd>
+        </dl>
+      </div>
       
       <h3>Storage Capacity <button id="butRefreshStorage" class="btn btn-mini"><i class="icon-repeat"></i> Refresh</button></h3>
       <table id="storageUsage" class="table table-bordered">

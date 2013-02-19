@@ -3,7 +3,7 @@
   "description": "SystemInfo",
   "manifest_version": 2,
   "minimum_chrome_version": "23",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "offline_enabled": true,
   "app": {
     "background": {
